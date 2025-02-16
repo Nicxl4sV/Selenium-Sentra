@@ -7,8 +7,8 @@ public class ProfilePage extends BasePage {
 
     private String buttonProfile = "//span[text()=\"Perfil\"]";
     private String buttonEdit = "//button[text()=\"Editar Datos Usuario\"]";
-    private String nombreUpdate = "//input[@id=\"firstname\"]";
-    private String apellidoUpdate = "//input[@id=\"lastname\"]";
+    private String nameUpdate = "//input[@id=\"firstname\"]";
+    private String lastnameUpdate = "//input[@id=\"lastname\"]";
     private String emailUpdate = "//input[@id=\"email\"]";
     private String openModalUpdate = "//h2[text()=\"Modificación Datos Usuario\"]";
     private String buttonChangePass = "//button[text()=\"Cambiar Contraseña\"]";
@@ -24,8 +24,8 @@ public class ProfilePage extends BasePage {
     }
 
     public void fillEditProfile(String nombre, String apellido, String email) {
-        write(nombreUpdate, nombre);
-        write(apellidoUpdate, apellido);
+        write(nameUpdate, nombre);
+        write(lastnameUpdate, apellido);
         write(emailUpdate, email);
     }
 

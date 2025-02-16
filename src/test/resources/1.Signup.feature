@@ -3,18 +3,30 @@ Feature: Registro de usuario
   proporcionando mi nombre, apellido, correo y contraseña para poder
   acceder a las funcionalidades del sitio.
 
-  Scenario: Desplegar modal de registro
-    Given Navego a la página de inicio
-    When Hago click en el botón de registro
-    Then Se despliega modal con el formulario de registro
 
-   Scenario Outline: Registrar usuario
+  Background: 
     Given Navego a la página de inicio
     When Hago click en el botón de registro
-    And Ingreso el nombre <name>, apellido <lastname> , email <e-mail>, contraseña <password>
-    And Hago click en el botón Registrar Usuario
+
+  Scenario: Desplegar modal de registro
+    Given Se despliega modal con el formulario de registro
+    Then Hago click en botón Cancelar
+
+
+  Scenario Outline: Registrar usuario
+    Given Ingreso el nombre <name>, apellido <lastname> , email <e-mail>, contraseña <password>
+    When Hago click en el botón Registrar Usuario
     Then Se muestra mensaje Usuario creado correctamente
 
-     Examples:
-       | name     | lastname | e-mail             | password |
-       | "Prueba" | "Junior" | "prueba@gmail.com" | "123456" |
+    Examples:
+      | name     | lastname | e-mail             | password |
+      | "Prueba" | "Junior" | "prueba@gmail.com" | "123456" |
+
+  Scenario Outline: Registrar usuario fail
+    Given Ingreso el nombre <name>, apellido <lastname>, email <e-mail>, contraseña <password> y contraseña incorrecta <password2>
+    When Hago click en el botón Registrar Usuario
+    Then Se muestra mensaje de error
+
+    Examples:
+      | name     | lastname | e-mail             | password | password2 |
+      | "Prueba" | "Junior" | "prueba@gmail.com" | "123456" | "9876"    |

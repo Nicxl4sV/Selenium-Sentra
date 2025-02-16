@@ -1,6 +1,6 @@
 package pages;
 
-public class PaginaPrincipal extends BasePage {
+public class MainPage extends BasePage {
     private String buttonLogin = "//button[text()=\"Ingresar\"]";
     private String logInSuccess = "//span[text()=\"Home\"]";
     private String passLogin = "//input[@id=\"password\"]";
@@ -13,8 +13,11 @@ public class PaginaPrincipal extends BasePage {
     private String emailInput = "//input[@class =\"MuiInputBase-input MuiInput-input css-mnn31\" and @id=\"email\" ] ";
     private String contraseñaInput = "//input[@class =\"MuiInputBase-input MuiInput-input css-mnn31\" and @id=\"password\" ] ";
     private String repetirContraseñaInput = "//input[@class =\"MuiInputBase-input MuiInput-input css-mnn31\" and @id=\"repeat_password\"]";
+    private String logInFail = "//div[@role=\"alert\"]";
+    private String signUpFail = "//div[text()=\"Contraseñas no coinciden\"]";
+    private String buttonCancel = "//button[text()=\"Cancelar\"]";
 
-    public PaginaPrincipal() {
+    public MainPage() {
         super(driver);
     }
 
@@ -75,4 +78,26 @@ public class PaginaPrincipal extends BasePage {
         write(repetirContraseñaInput, repetirContraseña);
     }
 
+    public boolean LogInFailResult() {
+        System.out.println(elementIsDisplayed(logInFail));
+        return elementIsDisplayed(logInFail);
+    }
+
+    public boolean failResult() {
+        System.out.println(elementIsDisplayed(signUpFail));
+        return elementIsDisplayed(signUpFail);
+    }
+    public void fillFailSignUpForm(String nombre, String apellido, String email, String contraseña, String contraseña2) {
+        write(nombreInput, nombre);
+        write(apellidoInput, apellido);
+        write(emailInput, email);
+        write(contraseñaInput, contraseña);
+        write(repetirContraseñaInput, contraseña2);
+    }
+
+    public void ToClickCancel() {
+        clickElement(buttonCancel);
+
+      
+}
 }

@@ -5,11 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.ProfilePage;
-import pages.PaginaPrincipal;
+import pages.MainPage;
 
 public class EditUserSteps {
 
-    PaginaPrincipal landingPage = new PaginaPrincipal();
+    MainPage landingPage = new MainPage();
     ProfilePage EditUserPage = new ProfilePage();
 
     @Given("Navego a la página del perfil")

@@ -39,12 +39,24 @@ public class BasePage {
 
     // Encuentra y devuelve un WebElement en la página utilizando un locator XPath,
     // esperando a que esté presentente en el DOM
-    private WebElement Find(String locator) {
+    private WebElement Find(String locator, String... clickable) {
+        if (clickable.length > 0) {
+            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+        }
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
 
     public void clickElement(String locator) {
-        Find(locator).click();
+        Find(locator, "clickable").click();
+    }
+
+    public List<WebElement> FindElements(String locator) {
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(locator)));
+    }
+
+    public List<String> getElementsText(String locator) {
+        List<WebElement> elements = FindElements(locator);
+        return elements.stream().map(WebElement::getText).toList();
     }
 
     public static void closeBrowser() {
@@ -80,5 +92,9 @@ public class BasePage {
 
         return dropdownOptions.size();
     }
+    public String attributeAriaSortFromElement(String locator) {
+        return driver.findElement(By.xpath(locator)).getDomAttribute("aria-sort");
+    }
+    
 
 }

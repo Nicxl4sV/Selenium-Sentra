@@ -1,11 +1,11 @@
 package steps;
 
 import io.cucumber.java.en.Given;
-import pages.PaginaPrincipal;
+import pages.MainPage;
 
 public class SharedSteps {
 
-    PaginaPrincipal landingPage = new PaginaPrincipal();
+    MainPage landingPage = new MainPage();
 
     @Given("Navego a la página de inicio")
     public void iNavigateToSentraTsk() {

@@ -13,3 +13,14 @@ Scenario Outline:Iniciar Sesión
      Examples:
        | email              | password |
        | "prueba@gmail.com" | "123456" |
+
+
+Scenario Outline:Iniciar Sesión faillido
+    Given Navego a la página de inicio
+    When Ingreso el email <email> y contraseña <password>
+     And Hago click en el botón Ingresar
+     Then No logro ingresar a la plataforma
+
+     Examples:
+       | email          | password |
+       | "prueba@gmail" | "12" |

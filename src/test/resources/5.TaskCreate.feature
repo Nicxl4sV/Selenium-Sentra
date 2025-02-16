@@ -9,7 +9,6 @@ organizar y gestionar mis actividades diarias.
     And Hago click en el botón Ingresar
     Then Hago click en el botón Home
 
-
   Scenario: Desplegar modal de creación de tareas
     Given Hago click en el botón Nueva Tarea
     Then Se despliega modal con el formulario de creación de tareas

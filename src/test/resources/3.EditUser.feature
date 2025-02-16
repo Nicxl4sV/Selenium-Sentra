@@ -29,3 +29,5 @@ perfil actualizado.
     And Ingreso nueva contraseña "test123" y repito la nueva contraseña "test123"
     And Hago click en el botón Cambiar contraseña
     Then La contraseña del usuario se cambia correctamente
+
+    
