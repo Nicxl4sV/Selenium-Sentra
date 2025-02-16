@@ -13,8 +13,8 @@ public class DriverFactory {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
+        options.addArguments("--disable-cache");
         driver = new ChromeDriver(options);
-
     }
 
     public static WebDriver getDriver() {

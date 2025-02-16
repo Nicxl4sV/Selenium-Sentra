@@ -1,5 +1,7 @@
 package steps;
 
+import org.testng.Assert;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
@@ -10,23 +12,23 @@ public class OrderBySteps {
 
     //ORDENAR SEGUN TITULO
     @When("Hago click en el botón del {string}, ordenar de manera descendente")
-    public void clickTitle(String option){
-        homePage.clickOnGrid(option);
+    public void clickTitle(String option) throws InterruptedException{
+        homePage.descClickOnGrid(option);
     }
 
     @When("Hago click en el botón del {string}, ordenar de manera ascendente")
     public void doubleClickTitle(String option){
-        homePage.doubleClickOnGrid(option);
+        homePage.ascClickOnGrid(option);
     }
 
     @Then("Las tareas se ordenan de manera descendente")
     public void validateTitleDescOrder(){
-        org.testng.Assert.assertEquals(homePage.validateOrder(), "descending");
+        Assert.assertEquals(homePage.validateOrder(), "descending");
     }
 
     @Then("Las tareas se ordenan de manera ascendente")
     public void validateTitleAscOrder(){
-        org.testng.Assert.assertEquals(homePage.validateOrder(), "ascending");
+        Assert.assertEquals(homePage.validateOrder(), "ascending");
     }
 
 }

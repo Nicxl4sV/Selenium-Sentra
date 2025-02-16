@@ -61,11 +61,12 @@ public class HomePage extends BasePage {
         System.out.println(elementIsDisplayed(taskCreateSuccess));
         return elementIsDisplayed(taskCreateSuccess);
     }
-    public void clickOnGrid(String option) {
+    public void descClickOnGrid(String option) {
         option = option.toLowerCase();
         
         if (option.equals("titulo")) {
             clickElement(titleGrid);
+        
         } else if (option.equals("prioridad")) {
             clickElement(priorityGrid);
             clickElement(priorityGrid);
@@ -75,7 +76,7 @@ public class HomePage extends BasePage {
         }
     }
     
-    public void doubleClickOnGrid(String option) {
+    public void ascClickOnGrid(String option) {
         option = option.toLowerCase();
         
         if (option.equals("titulo")) {

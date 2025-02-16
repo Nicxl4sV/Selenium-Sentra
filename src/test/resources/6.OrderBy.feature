@@ -9,13 +9,13 @@ tareas de manera efectiva.
     And Hago click en el botón Ingresar
     Then Hago click en el botón Home
 
- @Test
+
   Scenario: Ordenar tareas por Título de manera ascendente
-    Given Hago click en el botón del "Título", ordenar de manera ascendente
+    Given Hago click en el botón del "Titulo", ordenar de manera ascendente
     Then Las tareas se ordenan de manera ascendente
- @Test
+
   Scenario: Ordenar tareas por Título de manera descendente
-    Given Hago click en el botón del "Título", ordenar de manera descendente
+    Given Hago click en el botón del "Titulo", ordenar de manera descendente
     Then Las tareas se ordenan de manera descendente
 
 
