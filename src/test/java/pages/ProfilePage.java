@@ -19,7 +19,6 @@ public class ProfilePage extends BasePage {
     private String openModalChangePass = "//h2[text()=\"Cambiar Contraseña\"]";
 
     public void clickEditDataUser() {
-
         clickElement(buttonEdit);
     }
 
@@ -61,6 +60,16 @@ public class ProfilePage extends BasePage {
 
     public boolean EditPassWindow() {
         return elementIsDisplayed(openModalChangePass);
+    }
+
+    public boolean editUserFail(String nombre, String apellido, String email) {
+        return elementIsDisplayed(String.format(getData, nombre))
+                && elementIsDisplayed(String.format(getData, apellido))
+                && elementIsDisplayed(String.format(getData, email));
+    }
+
+    public boolean buttonStatus() {
+        return isElementClickable(buttonEditUser);
     }
 
 }

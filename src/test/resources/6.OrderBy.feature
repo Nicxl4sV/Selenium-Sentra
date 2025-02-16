@@ -5,7 +5,7 @@ tareas de manera efectiva.
 
   Background: Se hace Login a la página
     Given Navego a la página de inicio
-    When Ingreso el email "nvasque8@sentra.cl" y contraseña "test123"
+    When Ingreso el email "nvasque@sentra.cl" y contraseña "test123"
     And Hago click en el botón Ingresar
     Then Hago click en el botón Home
 

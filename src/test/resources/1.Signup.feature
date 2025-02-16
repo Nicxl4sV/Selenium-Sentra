@@ -22,7 +22,7 @@ Feature: Registro de usuario
       | name     | lastname | e-mail             | password |
       | "Prueba" | "Junior" | "prueba@gmail.com" | "123456" |
 
-  Scenario Outline: Registrar usuario fail
+  Scenario Outline: Registrar usuario faillido
     Given Ingreso el nombre <name>, apellido <lastname>, email <e-mail>, contraseña <password> y contraseña incorrecta <password2>
     When Hago click en el botón Registrar Usuario
     Then Se muestra mensaje de error

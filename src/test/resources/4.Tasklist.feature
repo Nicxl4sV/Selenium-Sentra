@@ -4,7 +4,7 @@ cuenta para tener una visión general de mis actividades pendientes.
 
   Background: Se hace Login a la página
     Given Navego a la página de inicio
-    When Ingreso el email "nvasque8@sentra.cl" y contraseña "test123"
+    When Ingreso el email "nvasque@sentra.cl" y contraseña "test123"
     And Hago click en el botón Ingresar
     
 

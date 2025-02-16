@@ -95,6 +95,15 @@ public class BasePage {
     public String attributeAriaSortFromElement(String locator) {
         return driver.findElement(By.xpath(locator)).getDomAttribute("aria-sort");
     }
-    
+
+
+    public boolean isElementClickable(String buttonEditUser) {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(buttonEditUser)));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }

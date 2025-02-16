@@ -77,7 +77,12 @@ public class EditUserSteps {
 
     @Then("La contraseña del usuario se cambia correctamente")
     public void ChangePassSuccess() {
-        Assert.assertTrue(EditUserPage.ChangePassSuccess(), "No se levanta modal Modificar Datos Usuario");
+        Assert.assertTrue(EditUserPage.ChangePassSuccess(), "La contraseña del usuario no se cambia correctamente");
 
     }
+
+//     @Then("El boton modificar usuario se encuentra inhabilitado") 
+//     public void editUserFail() {
+//         Assert.assertFalse(EditUserPage.buttonStatus(), "El boton modificar usuario se encuentra habilitado");
+// }
 }

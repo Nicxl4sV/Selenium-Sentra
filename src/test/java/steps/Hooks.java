@@ -11,6 +11,7 @@ public class Hooks {
     public void setup(Scenario scenario) {
         DriverFactory.initDriver();
         System.out.println(scenario.getName());
+
     }
 
     @After()
