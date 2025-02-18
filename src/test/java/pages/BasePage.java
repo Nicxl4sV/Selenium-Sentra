@@ -13,23 +13,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    protected static WebDriver driver;
+    protected final WebDriver driver;
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-    public BasePage(WebDriver driver) {
-        BasePage.driver = DriverFactory.getDriver();
+    public BasePage() {
+        driver = DriverFactory.getDriver();
     }
 
-    public static void navigateTo(String url) {
-        BasePage.driver.get(url);
+    public void navigateTo(String url) {
+        driver.get(url);
     }
 
     private WebElement Find(String locator, String... clickable) {
         if (clickable.length > 0) {
-            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            return new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
         }
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
 
     public void clickElement(String locator) {
@@ -37,7 +37,8 @@ public class BasePage {
     }
 
     public List<WebElement> FindElements(String locator) {
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(locator)));
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(locator)));
     }
 
     public List<String> getElementsText(String locator) {
@@ -45,7 +46,7 @@ public class BasePage {
         return elements.stream().map(WebElement::getText).toList();
     }
 
-    public static void closeBrowser() {
+    public void closeBrowser() {
         driver.quit();
     }
 
@@ -85,7 +86,8 @@ public class BasePage {
 
     public boolean isElementClickable(String buttonEditUser) {
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(buttonEditUser)));
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath(buttonEditUser)));
             return true;
         } catch (Exception e) {
             return false;

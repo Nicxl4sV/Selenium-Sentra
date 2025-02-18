@@ -8,26 +8,24 @@ import pages.HomePage;
 
 public class OrderBySteps {
     HomePage homePage = new HomePage();
-   
 
-    //ORDENAR SEGUN TITULO
     @When("Hago click en el botón del {string}, ordenar de manera descendente")
-    public void clickTitle(String option) throws InterruptedException{
+    public void clickTitle(String option) throws InterruptedException {
         homePage.descClickOnGrid(option);
     }
 
     @When("Hago click en el botón del {string}, ordenar de manera ascendente")
-    public void doubleClickTitle(String option){
+    public void doubleClickTitle(String option) {
         homePage.ascClickOnGrid(option);
     }
 
     @Then("Las tareas se ordenan de manera descendente")
-    public void validateTitleDescOrder(){
+    public void validateTitleDescOrder() {
         Assert.assertEquals(homePage.validateOrder(), "descending");
     }
 
     @Then("Las tareas se ordenan de manera ascendente")
-    public void validateTitleAscOrder(){
+    public void validateTitleAscOrder() {
         Assert.assertEquals(homePage.validateOrder(), "ascending");
     }
 

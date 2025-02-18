@@ -6,10 +6,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
+import pages.TaskPage;
 
 public class TaskListSteps {
 
     HomePage homePage = new HomePage();
+    TaskPage taskPage = new TaskPage();
 
     @When("Hago click en el botón Home")
     public void ClickHome() {
@@ -23,8 +25,7 @@ public class TaskListSteps {
 
     @Then("Se Visualizan las tareas asignadas a mi cuenta")
     public void TaskList() {
-        Assert.assertTrue(homePage.TaskList(), "No se visualizan las tareas");
+        Assert.assertTrue(taskPage.TaskList(), "No se visualizan las tareas");
 
     }
-
 }

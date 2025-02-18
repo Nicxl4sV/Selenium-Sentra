@@ -5,10 +5,9 @@ tareas de manera efectiva.
 
   Background: Se hace Login a la página
     Given Navego a la página de inicio
-    When Ingreso el email "nvasque@sentra.cl" y contraseña "test123"
+    When Ingreso el email "prueba@gmail.com" y contraseña "123"
     And Hago click en el botón Ingresar
     Then Hago click en el botón Home
-
 
   Scenario: Ordenar tareas por Título de manera ascendente
     Given Hago click en el botón del "Titulo", ordenar de manera ascendente
@@ -18,24 +17,18 @@ tareas de manera efectiva.
     Given Hago click en el botón del "Titulo", ordenar de manera descendente
     Then Las tareas se ordenan de manera descendente
 
-
   Scenario: Ordenar tareas por  Fecha vencimiento de manera ascendente
     Given Hago click en el botón del "Fecha Vencimiento", ordenar de manera ascendente
     Then Las tareas se ordenan de manera ascendente
 
-
   Scenario: Ordenar tareas por  Fecha vencimiento de manera descendente
     Given Hago click en el botón del "Fecha Vencimiento", ordenar de manera descendente
     Then Las tareas se ordenan de manera descendente
-    
 
   Scenario: Ordenar tareas por  Prioridad de manera ascendente
     Given Hago click en el botón del "Prioridad", ordenar de manera ascendente
     Then Las tareas se ordenan de manera ascendente
 
-
   Scenario: Ordenar tareas por  Prioridad de manera descendente
     Given Hago click en el botón del "Prioridad", ordenar de manera descendente
     Then Las tareas se ordenan de manera descendente
-
-
