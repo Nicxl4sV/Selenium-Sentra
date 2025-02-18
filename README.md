@@ -31,3 +31,6 @@ build.gradle
  linea N° 10 del archivo TestRunner.java (src/test/java/runner/TestRunner.java) y luego colocar @Test, antes de cada escenario a ejecutar 
 
 Todos los casos de prueba deben salir ejecutados correctamente, en caso que un caso de prueba falle, la certificación será rechazada con su justificación en cada caso de prueba.
+
+Para ver el reporte de pruebas, se debe escribir en la terminal el siguiente comando: " gradle test ", el cual al finalizar la ejecución de todos los casos entregará el siguiente resultado con el link del reporte: 
+> There were failing tests. See the report at: file:///C:/Users/nicol/OneDrive/Escritorio/Evaluacion%20Nvasquez/build/reports/tests/test/index.html
