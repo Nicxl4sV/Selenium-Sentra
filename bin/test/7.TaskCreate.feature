@@ -5,7 +5,7 @@ organizar y gestionar mis actividades diarias.
 
   Background: Se hace Login a la página
     Given Navego a la página de inicio
-    When Ingreso el email "nvasque@sentra.cl" y contraseña "test123"
+    When Ingreso el email "prueba@gmail.com" y contraseña "123"
     And Hago click en el botón Ingresar
     Then Hago click en el botón Home
 
@@ -13,7 +13,6 @@ organizar y gestionar mis actividades diarias.
     Given Hago click en el botón Nueva Tarea
     Then Se despliega modal con el formulario de creación de tareas
 
- 
   Scenario Outline: Crear una nueva tarea
     Given Hago click en el botón Nueva Tarea
     When Ingreso el título <título>, descripción <descripción>, fecha de vencimiento <fecha y hora> y prioridad <prioridad>

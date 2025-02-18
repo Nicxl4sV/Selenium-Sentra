@@ -3,8 +3,7 @@ Feature: Registro de usuario
   proporcionando mi nombre, apellido, correo y contraseña para poder
   acceder a las funcionalidades del sitio.
 
-
-  Background: 
+  Background:
     Given Navego a la página de inicio
     When Hago click en el botón de registro
 
@@ -12,15 +11,14 @@ Feature: Registro de usuario
     Given Se despliega modal con el formulario de registro
     Then Hago click en botón Cancelar
 
-
   Scenario Outline: Registrar usuario
     Given Ingreso el nombre <name>, apellido <lastname> , email <e-mail>, contraseña <password>
     When Hago click en el botón Registrar Usuario
     Then Se muestra mensaje Usuario creado correctamente
 
     Examples:
-      | name     | lastname | e-mail             | password |
-      | "Prueba" | "Junior" | "prueba@gmail.com" | "123456" |
+      | name     | lastname    | e-mail                      | password |
+      | "Prueba" | "Registrar" | "pruebaregister3@gmail.com" | "123456" |
 
   Scenario Outline: Registrar usuario faillido
     Given Ingreso el nombre <name>, apellido <lastname>, email <e-mail>, contraseña <password> y contraseña incorrecta <password2>
@@ -28,5 +26,5 @@ Feature: Registro de usuario
     Then Se muestra mensaje de error
 
     Examples:
-      | name     | lastname | e-mail             | password | password2 |
-      | "Prueba" | "Junior" | "prueba@gmail.com" | "123456" | "9876"    |
+      | name      | lastname       | e-mail                 | password | password2 |
+      | "Prueba2" | "RegisterFail" | "pruebaaaaa@gmail.com" | "123456" | "9876"    |
