@@ -1,6 +1,5 @@
 package pages;
 
-// Importaciones necesarias
 import java.time.Duration;
 import java.util.List;
 import utils.DriverFactory;
@@ -13,32 +12,19 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-    /*
-     * Declaración de una variable estática 'driver' de tipo WebDriver
-     * Esta variable va a ser compartida por todas las instancias de BasePage y sus
-     * subclases
-     */
+
     protected static WebDriver driver;
 
-    /*
-     * Declaración de una variable de instancia 'wait' de tipo WebDriverWait.
-     * Se inicializa inmediatamente con una instancia dew WebDriverWait utilizando
-     * el 'driver' estático
-     * WebDriverWait se usa para poner esperas explícitas en los elementos web
-     */
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     public BasePage(WebDriver driver) {
         BasePage.driver = DriverFactory.getDriver();
     }
 
-    // Método estático para navegar a una URL.
     public static void navigateTo(String url) {
         BasePage.driver.get(url);
     }
 
-    // Encuentra y devuelve un WebElement en la página utilizando un locator XPath,
-    // esperando a que esté presentente en el DOM
     private WebElement Find(String locator, String... clickable) {
         if (clickable.length > 0) {
             return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
@@ -92,10 +78,10 @@ public class BasePage {
 
         return dropdownOptions.size();
     }
+
     public String attributeAriaSortFromElement(String locator) {
         return driver.findElement(By.xpath(locator)).getDomAttribute("aria-sort");
     }
-
 
     public boolean isElementClickable(String buttonEditUser) {
         try {

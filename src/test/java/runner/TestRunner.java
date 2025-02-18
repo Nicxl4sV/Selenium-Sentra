@@ -6,7 +6,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources", glue = "steps", plugin = { "pretty",
-        "html:target/cucumber-reports" })
+        "html:target/cucumber-reports" }
+        // , tags = "@Tags"
+        )
 
 public class TestRunner {
 }
