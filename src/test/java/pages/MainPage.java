@@ -18,17 +18,15 @@ public class MainPage extends BasePage {
     private String buttonCancel = "//button[text()=\"Cancelar\"]";
 
     public MainPage() {
-        super(driver);
+        super();
     }
 
-    // Método para navegar a Sentra Task
     public void iNavigateToSentraTsk() {
         navigateTo("http://192.168.80.43:10300");
 
     }
 
     public void clickSignUp() {
-        // Reemplaza el marcador de posición en sectionLink con el nombre
         clickElement(buttonSignUp);
     }
 
@@ -87,7 +85,9 @@ public class MainPage extends BasePage {
         System.out.println(elementIsDisplayed(signUpFail));
         return elementIsDisplayed(signUpFail);
     }
-    public void fillFailSignUpForm(String nombre, String apellido, String email, String contraseña, String contraseña2) {
+
+    public void fillFailSignUpForm(String nombre, String apellido, String email, String contraseña,
+            String contraseña2) {
         write(nombreInput, nombre);
         write(apellidoInput, apellido);
         write(emailInput, email);
@@ -98,6 +98,5 @@ public class MainPage extends BasePage {
     public void ToClickCancel() {
         clickElement(buttonCancel);
 
-      
-}
+    }
 }

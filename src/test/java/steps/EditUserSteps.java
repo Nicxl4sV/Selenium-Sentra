@@ -81,8 +81,8 @@ public class EditUserSteps {
 
     }
 
-//     @Then("El boton modificar usuario se encuentra inhabilitado") 
-//     public void editUserFail() {
-//         Assert.assertFalse(EditUserPage.buttonStatus(), "El boton modificar usuario se encuentra habilitado");
-// }
+    @Then("El boton modificar usuario se encuentra inhabilitado")
+    public void editUserFail() {
+        Assert.assertFalse(EditUserPage.buttonStatus(), "El boton modificar usuario se encuentra habilitado");
+    }
 }

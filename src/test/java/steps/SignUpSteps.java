@@ -18,11 +18,11 @@ public class SignUpSteps {
     public void SignUpWindow() {
         Assert.assertTrue(landingPage.firstResult(), "No se levanta modal Registrar Usuario");
     }
-    @Then ("Hago click en botón Cancelar")
+
+    @Then("Hago click en botón Cancelar")
     public void ToClickCancel() throws InterruptedException {
         landingPage.ToClickCancel();
     }
-
 
     @Given("Ingreso el nombre {string}, apellido {string} , email {string}, contraseña {string}")
     public void ingreso_el_nombre_prueba_apellido_junior_email_prueba_gmail_com_contraseña(
@@ -40,17 +40,15 @@ public class SignUpSteps {
         Assert.assertTrue(landingPage.successResult(), "Usuario no queda registrado correctamente");
     }
 
-
     @Given("Ingreso el nombre {string}, apellido {string}, email {string}, contraseña {string} y contraseña incorrecta {string}")
     public void ingreso_el_nombre_prueba_apellido_junior_email_prueba_gmail_com_contraseña_y_contraseña_fail(
             String nombre, String apellido, String email, String contraseña, String contraseña2) {
         landingPage.fillFailSignUpForm(nombre, apellido, email, contraseña, contraseña2);
     }
 
-
-    @Then ("Se muestra mensaje de error")
+    @Then("Se muestra mensaje de error")
     public void se_muestra_mensaje_fail() {
         Assert.assertTrue(landingPage.failResult(), "Usuario registrado correctamente");
-}
+    }
 
 }
